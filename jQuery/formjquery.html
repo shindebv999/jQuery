@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>	
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	<style type="text/css">
+	.box ,.box2
+		{
+			border: 1px ridge gray;
+			width: 40%;
+			height: 550px;
+			display: inline-block;
+			padding:10px 0 0 40px ;
+	        box-shadow: 4px 5px 11px 2px grey ;
+	        margin-left: 20px;
+	     
+		}
+		.box h1
+		{
+			margin: 5px 0px 10px 50px;
+		}
+		textarea
+		{
+			display: block;
+			margin-bottom: 10px;
+			
+		}
+		.box input
+		{
+			display: block;
+			margin-bottom: 10px;
+			height: 30px;
+			width: 200px;
+			border-radius: 5px;
+			border: none;
+			border-bottom: 2px solid #B08A9A;
+		}
+		
+		.box #btn
+		{
+			width: 200px;
+			height: 40px;
+			font-size: large;
+	       	border-radius:30px ;
+	       	background-color: white;
+		}
+		.required::after
+		{
+			content: '*';
+			color: red;
+		}
+		
+		 .box2
+		 {
+		 	position: absolute;
+		 	top: 10px;
+		 	left: 600px;
+		 }
+		.box2 label,span
+		{
+			display: block;
+			margin-bottom: 30px;
+		}
+		span
+		{
+			border: 1px solid black;
+			border: none;
+			border-bottom: 1px solid lightgray;
+			width: 40%;
+		}
+       
+	</style>
+</head>
+<body>
+<form>
+<div class="box">
+	<form action="#">
+		<h2>Registration form</h2>
+	<label class="required">First Name:</label>
+	<input type="text" id="fullname" placeholder="Enter Your First Name"name="">
+	<label class="required">Last Name:</label>
+	<input type="text" id="lastname"  placeholder=" Enter YourLast Name"name="">
+	<label class="required">Email Id:</label>
+	<input type="Email" id="email" placeholder="abc@gmail.com "name="">
+	<label class="required">Password:</label>
+	<input type="Password" id="password" placeholder=" Enter Your Password" name="">
+	<label>Address:</label>
+	<textarea id="textarea" rows="10" cols="40"></textarea>
+	<input type="submit" id="btn" value="Submit" >
+</form>
+</div>
+
+<div class="mbox">	
+<div class="box2">
+	<h2>Your information :</h2>
+<label >First Name:</label><span id="label1"> </span>
+<label >Last Name:</label><span id="label2"> </span>
+<label >Email Id:</label><span id="label3"> </span>
+<label >Password:</label><span id="label4"> </span>
+<label >Address:</label><span id="label5"> </span>
+</div>
+</div>
+
+<script type="text/javascript">
+
+	$(document).ready(function (){
+		$('#btn').on("click",function(){
+        $('#label1').html($('#fullname').val());
+		$('#label2').html($('#lastname').val());
+		$('#label3').html($('#email').val());
+     	$('#label4').html($('#password').val());
+		$('#label5').html($('#textarea').val());
+	});
+
+	});
+	</script>
+</body>
+</html>
